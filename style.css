@@ -654,59 +654,195 @@ flex-shrink:0;
 
 /* ===== CONTACT FORM ===== */
 
-.contact-form{
-flex:1;
-background:#ffffff;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 40px rgba(0,0,0,0.05);
-border:1px solid #f1e8df;
+/* ===== GOOGLE FORM BUTTON CARD STYLES ===== */
+
+.google-form-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  border: 1px solid #f1e8df;
+  padding: 40px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
 }
 
-.form-group{
-margin-bottom:20px;
+.google-form-card:hover {
+  box-shadow: 0 15px 50px rgba(212,122,35,0.12);
+  border-color: #f3d7bc;
+  transform: translateY(-4px);
 }
 
-.form-group input,
-.form-group textarea{
-width:100%;
-padding:14px 16px;
-border-radius:12px;
-border:1px solid #e6e0d9;
-font-family:'Inter',sans-serif;
-font-size:14px;
-outline:none;
-transition:0.3s ease;
-background:#faf8f5;
+.google-form-content {
+  text-align: center;
+  max-width: 320px;
 }
 
-.form-group input:focus,
-.form-group textarea:focus{
-border-color:#d47a23;
-background:#fff;
+.google-form-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #fdeedb, #fff7ee);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #d47a23;
+  margin: 0 auto 25px auto;
 }
 
-.form-group textarea{
-resize:none;
-height:110px;
+.google-form-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #1e2430;
+  margin-bottom: 15px;
 }
 
-.contact-btn{
-width:100%;
-padding:14px;
-background:#d47a23;
-border:none;
-border-radius:14px;
-color:white;
-font-weight:500;
-font-size:15px;
-cursor:pointer;
-transition:0.3s ease;
+.google-form-content p {
+  color: #6c7480;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
-.contact-btn:hover{
-background:#b9651c;
-transform:translateY(-2px);
+.google-form-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #d47a23;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.google-form-btn:hover {
+  background: #b9651c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(212,122,35,0.3);
+}
+
+.google-form-note {
+  display: block;
+  color: #9aa3ad;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .google-form-card {
+    width: 100%;
+    min-height: 350px;
+  }
+  
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .contact-left {
+    width: 100%;
+  }
+  
+  .contact-left p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .google-form-card {
+    padding: 30px 20px;
+    min-height: 320px;
+  }
+  
+  .google-form-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .google-form-content h3 {
+    font-size: 22px;
+  }
+  
+  .google-form-content p {
+    font-size: 14px;
+  }
+  
+  .google-form-btn {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+  
+  .contact {
+    padding: 70px 5%;
+  }
+  
+  .contact h2 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 576px) {
+  .google-form-card {
+    padding: 25px 15px;
+    min-height: 300px;
+  }
+  
+  .google-form-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .google-form-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .google-form-content p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  
+  .google-form-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  
+  .google-form-note {
+    font-size: 12px;
+  }
+  
+  .contact {
+    padding: 50px 4%;
+  }
+  
+  .contact h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+  
+  .contact p {
+    font-size: 15px;
+  }
+  
+  .contact-info div {
+    font-size: 14px;
+  }
 }
 
 /* ===== PREMIUM FOOTER ===== */
@@ -1114,4 +1250,5 @@ video {
   max-width: 100%;
   height: auto;
 }
+
 
