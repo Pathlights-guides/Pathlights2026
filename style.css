@@ -240,6 +240,7 @@ margin:20px 0 25px 0;
 color:#6c7480;
 font-size:18px;
 line-height:1.8;
+text-align: justify;
 }
 
 .about-image{
@@ -845,6 +846,23 @@ flex-shrink:0;
   }
 }
 
+/* Animation for button */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 122, 35, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(212, 122, 35, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 122, 35, 0);
+  }
+}
+
+.google-form-btn:focus {
+  animation: pulse 1.5s infinite;
+}
+
 /* ===== PREMIUM FOOTER ===== */
 
 .footer{
@@ -970,6 +988,107 @@ height:16px;
 stroke:#d6d9df;
 stroke-width:2;
 transition:0.3s ease;
+}
+
+/* ===== FOOTER LEGAL LINKS ===== */
+
+.footer-legal {
+  max-width: 1100px;
+  margin: 30px auto 20px auto;
+  padding: 0 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.legal-link {
+  color: #9aa3ad;
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.legal-link:hover {
+  color: #d47a23;
+}
+
+.legal-separator {
+  color: #4a525f;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/* Responsive styles for legal links */
+@media (max-width: 768px) {
+  .footer-legal {
+    gap: 12px;
+    padding: 0 5%;
+  }
+  
+  .legal-link {
+    font-size: 12px;
+  }
+  
+  .legal-separator {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-legal {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .legal-separator {
+    display: none;
+  }
+  
+  .legal-link {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+  
+  /* Add divider line between links on mobile */
+  .legal-link:not(:last-child) {
+    border-bottom: 1px solid #2f3645;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 8px;
+  }
+}
+
+/* Optional: Add subtle underline animation on hover */
+.legal-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 50%;
+  background: #d47a23;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.legal-link:hover::after {
+  width: 100%;
+}
+
+/* Adjust footer bottom spacing */
+.footer-bottom {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+/* Ensure proper spacing on smaller screens */
+@media (max-width: 992px) {
+  .footer-legal {
+    margin-top: 20px;
+  }
 }
 
 /* Brand Hover Effects */
@@ -1250,5 +1369,4 @@ video {
   max-width: 100%;
   height: auto;
 }
-
 
